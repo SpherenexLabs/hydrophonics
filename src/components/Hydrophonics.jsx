@@ -249,33 +249,170 @@ function App() {
     <div className="dashboard">
       {newDataNotification && (
         <div className="new-data-notification">
-          {newDataNotification === 'sheets' && '📊 New data from Google Sheets!'}
-          {newDataNotification === 'mock' && '🎲 Demo data updated!'}
+          {newDataNotification === 'sheets' && 'New data from Google Sheets'}
+          {newDataNotification === 'mock' && 'Demo data updated'}
         </div>
       )}
       
-      <header className="dashboard-header">
+      {/* LabVIEW Application Window */}
+      <div className="labview-window">
+        {/* Title Bar */}
+        <div className="labview-titlebar">
+          <div className="labview-titlebar-left">
+            <div className="labview-icon">LV</div>
+            <span className="labview-titlebar-text">LabVIEW 2024 - Hydroponic_Monitor.vi</span>
+          </div>
+          <div className="labview-titlebar-right">
+            <button className="labview-titlebar-btn">_</button>
+            <button className="labview-titlebar-btn">□</button>
+            <button className="labview-titlebar-btn close">×</button>
+          </div>
+        </div>
+
+        {/* Menu Bar */}
+        <div className="labview-menubar">
+          <span>File</span>
+          <span>Edit</span>
+          <span>View</span>
+          <span>Project</span>
+          <span>Operate</span>
+          <span>Tools</span>
+          <span>Window</span>
+          <span>Help</span>
+        </div>
+
+        {/* Toolbar */}
+        <div className="labview-toolbar">
+          <button className="run-button" title="Run">▶</button>
+          <button className="stop-button" title="Stop">■</button>
+          <div className="separator"></div>
+          <button title="New VI">📄</button>
+          <button title="Open">📁</button>
+          <button title="Save">💾</button>
+          <div className="separator"></div>
+          <button title="Cut">✂</button>
+          <button title="Copy">📋</button>
+          <button title="Paste">📄</button>
+          <div className="separator"></div>
+          <button title="Align">⊞</button>
+          <button title="Distribute">⊟</button>
+          <span className="labview-toolbar-label">Front Panel</span>
+        </div>
+
+        {/* Main Content Area */}
+        <div className="labview-content">
+          {/* Left Sidebar - Functions Palette */}
+          <div className="labview-sidebar">
+            <div className="labview-sidebar-title">Functions Palette</div>
+            <div className="labview-palette-section">
+              <div className="labview-palette-item category">
+                <div className="icon">▼</div>
+                <span className="label">Programming</span>
+              </div>
+              <div className="labview-palette-item">
+                <div className="icon">N</div>
+                <span className="label">Numeric</span>
+              </div>
+              <div className="labview-palette-item">
+                <div className="icon">B</div>
+                <span className="label">Boolean</span>
+              </div>
+              <div className="labview-palette-item">
+                <div className="icon">S</div>
+                <span className="label">String</span>
+              </div>
+              <div className="labview-palette-item">
+                <div className="icon">A</div>
+                <span className="label">Array</span>
+              </div>
+              <div className="labview-palette-item">
+                <div className="icon">C</div>
+                <span className="label">Cluster & Variant</span>
+              </div>
+            </div>
+            <div className="labview-palette-section">
+              <div className="labview-palette-item category active">
+                <div className="icon">▼</div>
+                <span className="label">Measurement I/O</span>
+              </div>
+              <div className="labview-palette-item">
+                <div className="icon">D</div>
+                <span className="label">DAQmx</span>
+              </div>
+              <div className="labview-palette-item">
+                <div className="icon">I</div>
+                <span className="label">Instrument I/O</span>
+              </div>
+            </div>
+            <div className="labview-palette-section">
+              <div className="labview-palette-item category">
+                <div className="icon">▼</div>
+                <span className="label">Signal Processing</span>
+              </div>
+              <div className="labview-palette-item">
+                <div className="icon">F</div>
+                <span className="label">Filters</span>
+              </div>
+              <div className="labview-palette-item">
+                <div className="icon">W</div>
+                <span className="label">Waveform</span>
+              </div>
+              <div className="labview-palette-item">
+                <div className="icon">M</div>
+                <span className="label">Measurement</span>
+              </div>
+            </div>
+            <div className="labview-palette-section">
+              <div className="labview-palette-item category">
+                <div className="icon">▼</div>
+                <span className="label">Mathematics</span>
+              </div>
+              <div className="labview-palette-item">
+                <div className="icon">Σ</div>
+                <span className="label">Scripts & Formulas</span>
+              </div>
+              <div className="labview-palette-item">
+                <div className="icon">∫</div>
+                <span className="label">Calculus</span>
+              </div>
+            </div>
+          </div>
+
+          {/* VI Panel */}
+          <div className="labview-vi-panel">
+            <div className="labview-vi-header">
+              <div className="labview-vi-title">Hydroponic_Monitor.vi - Front Panel</div>
+              <div className="labview-vi-controls">
+                <button className="labview-window-btn">_</button>
+                <button className="labview-window-btn">□</button>
+                <button className="labview-window-btn">×</button>
+              </div>
+            </div>
+
+            {/* Original Dashboard Content */}
+            <div style={{padding: '0'}}>
+              <header className="dashboard-header">
         <h1>Hydroponic Monitoring Dashboard</h1>
         <div className="header-controls">
           <div className="connection-status">
-            Status: 
+            <span style={{fontWeight: 'bold'}}>Status:</span>
             <span className={`status-${connectionStatus}`}>
-              {connectionStatus === 'connected' && '🟢 Live Data'}
-              {connectionStatus === 'mock' && '🟡 Demo Mode'}
-              {connectionStatus === 'error' && '🔴 Disconnected'}
-              {connectionStatus === 'connecting' && '🟡 Connecting...'}
+              {connectionStatus === 'connected' && 'Live Data'}
+              {connectionStatus === 'mock' && 'Demo Mode'}
+              {connectionStatus === 'error' && 'Disconnected'}
+              {connectionStatus === 'connecting' && 'Connecting...'}
             </span>
             {isRealTime && (
               <span className="check-indicator">
-                | Checks: {checkCount} | {isMonitoring ? '🔍 Checking...' : '💤 Idle'}
+                | Checks: {checkCount} | {isMonitoring ? 'Monitoring...' : 'Idle'}
               </span>
             )}
           </div>
           <div className="last-update">
-            Last Updated: {lastUpdate ? lastUpdate.toLocaleString() : 'Never'}
+            Last Update: {lastUpdate ? lastUpdate.toLocaleString() : 'Never'}
             {lastKnownTimestamp && (
               <div className="latest-timestamp">
-                Latest Data: {new Date(lastKnownTimestamp).toLocaleString()}
+                Latest: {new Date(lastKnownTimestamp).toLocaleString()}
               </div>
             )}
           </div>
@@ -284,9 +421,9 @@ function App() {
               onClick={() => setIsRealTime(!isRealTime)} 
               className={`toggle-btn ${isRealTime ? 'active' : ''}`}
             >
-              {isRealTime ? '⏸️ Pause' : '▶️ Resume'} Real-time
+              {isRealTime ? 'Pause' : 'Resume'} Monitoring
             </button>
-            <button onClick={fetchData} className="refresh-btn">🔄 Refresh</button>
+            <button onClick={fetchData} className="refresh-btn">Refresh</button>
           </div>
         </div>
       </header>
@@ -295,27 +432,22 @@ function App() {
         <div className={`metric-card ${isRealTime ? 'live-update' : ''}`}>
           <h3>Air Temperature</h3>
           <div className="metric-value">{latest?.AirT_C}°C</div>
-          <div className="trend-indicator">📈</div>
         </div>
         <div className={`metric-card ${isRealTime ? 'live-update' : ''}`}>
           <h3>Humidity</h3>
           <div className="metric-value">{latest?.['Humidity_%']}%</div>
-          <div className="trend-indicator">💧</div>
         </div>
         <div className={`metric-card ${isRealTime ? 'live-update' : ''}`}>
           <h3>Water Temperature</h3>
           <div className="metric-value">{latest?.WaterTemp_C}°C</div>
-          <div className="trend-indicator">🌊</div>
         </div>
         <div className={`metric-card ${isRealTime ? 'live-update' : ''}`}>
           <h3>pH Level</h3>
           <div className="metric-value">{latest?.ph}</div>
-          <div className="trend-indicator">⚗️</div>
         </div>
         <div className={`metric-card ${isRealTime ? 'live-update' : ''}`}>
           <h3>Water Level</h3>
           <div className="metric-value">{latest?.['Water_%']}%</div>
-          <div className="trend-indicator">📊</div>
         </div>
       </div>
 
@@ -324,13 +456,20 @@ function App() {
           <h2>Temperature Trends</h2>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={data.slice(-20)}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="timestamp" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="AirT_C" stroke="#8884d8" name="Air Temp (°C)" />
-              <Line type="monotone" dataKey="WaterTemp_C" stroke="#82ca9d" name="Water Temp (°C)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
+              <XAxis dataKey="timestamp" stroke="#000" style={{fontSize: '10px'}} />
+              <YAxis stroke="#000" style={{fontSize: '10px'}} />
+              <Tooltip 
+                contentStyle={{
+                  background: '#ffffff',
+                  border: '1px solid #ccc',
+                  borderRadius: '0',
+                  fontSize: '10px'
+                }}
+              />
+              <Legend wrapperStyle={{fontSize: '10px'}} />
+              <Line type="monotone" dataKey="AirT_C" stroke="#ff3333" strokeWidth={2} name="Air Temp (°C)" dot={{fill: '#ff3333', r: 3}} />
+              <Line type="monotone" dataKey="WaterTemp_C" stroke="#3366ff" strokeWidth={2} name="Water Temp (°C)" dot={{fill: '#3366ff', r: 3}} />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -339,13 +478,20 @@ function App() {
           <h2>pH and Water Level</h2>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={data.slice(-20)}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="timestamp" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="ph" stroke="#ff7300" name="pH Level" />
-              <Line type="monotone" dataKey="Water_%" stroke="#0088aa" name="Water Level (%)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
+              <XAxis dataKey="timestamp" stroke="#000" style={{fontSize: '10px'}} />
+              <YAxis stroke="#000" style={{fontSize: '10px'}} />
+              <Tooltip 
+                contentStyle={{
+                  background: '#ffffff',
+                  border: '1px solid #ccc',
+                  borderRadius: '0',
+                  fontSize: '10px'
+                }}
+              />
+              <Legend wrapperStyle={{fontSize: '10px'}} />
+              <Line type="monotone" dataKey="ph" stroke="#ff6600" strokeWidth={2} name="pH Level" dot={{fill: '#ff6600', r: 3}} />
+              <Line type="monotone" dataKey="Water_%" stroke="#00cc66" strokeWidth={2} name="Water Level (%)" dot={{fill: '#00cc66', r: 3}} />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -354,12 +500,19 @@ function App() {
           <h2>Humidity Overview</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={data.slice(-10)}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="timestamp" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="Humidity_%" fill="#8884d8" name="Humidity (%)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
+              <XAxis dataKey="timestamp" stroke="#000" style={{fontSize: '10px'}} />
+              <YAxis stroke="#000" style={{fontSize: '10px'}} />
+              <Tooltip 
+                contentStyle={{
+                  background: '#ffffff',
+                  border: '1px solid #ccc',
+                  borderRadius: '0',
+                  fontSize: '10px'
+                }}
+              />
+              <Legend wrapperStyle={{fontSize: '10px'}} />
+              <Bar dataKey="Humidity_%" fill="#6699cc" name="Humidity (%)" />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -392,8 +545,13 @@ function App() {
           </tbody>
         </table>
       </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default App;
+
