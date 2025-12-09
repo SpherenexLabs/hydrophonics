@@ -1,0 +1,1739 @@
+/* Advanced Hydroponic Control System CSS - Authentic LabVIEW Style */
+
+/* Base Dashboard */
+.dashboard.hydroponic-advanced {
+  font-family: 'Segoe UI', 'Arial', 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #1e1e1e;
+  min-height: 100vh;
+}
+
+/* LabVIEW Window */
+.labview-window {
+  background: #c0c0c0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* Title Bar */
+.labview-titlebar {
+  background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #a0a0a0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.labview-titlebar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.labview-icon {
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.labview-titlebar-text {
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+}
+
+.labview-titlebar-right {
+  display: flex;
+  gap: 4px;
+}
+
+.labview-titlebar-btn {
+  width: 24px;
+  height: 20px;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+.labview-titlebar-btn:hover {
+  background: #e0e0e0;
+}
+
+.labview-titlebar-btn.close:hover {
+  background: #ff5555;
+  color: white;
+}
+
+/* Menu Bar */
+.labview-menubar {
+  background: #f0f0f0;
+  border-bottom: 1px solid #c0c0c0;
+  display: flex;
+  gap: 0;
+  padding: 2px 8px;
+  font-size: 11px;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5);
+}
+
+.labview-menubar span {
+  padding: 4px 12px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.labview-menubar span:hover {
+  background: #e0e0e0;
+}
+
+.labview-menubar span.active {
+  background: #4a90e2;
+  color: white;
+}
+
+/* Toolbar */
+.labview-toolbar {
+  background: linear-gradient(180deg, #f5f5f5 0%, #e8e8e8 100%);
+  border-bottom: 1px solid #b0b0b0;
+  display: flex;
+  gap: 4px;
+  padding: 4px 8px;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.labview-toolbar button {
+  min-width: 28px;
+  height: 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #d4d0c8 100%);
+  border: 1px solid #808080;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  cursor: pointer;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 0 6px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.labview-toolbar button:hover {
+  background: linear-gradient(180deg, #f5f5f5 0%, #e0e0e0 100%);
+}
+
+.labview-toolbar button:active {
+  background: #c0c0c0;
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.run-button {
+  background: linear-gradient(180deg, #90ee90 0%, #60d060 100%) !important;
+  color: #003300;
+  font-weight: bold;
+  font-size: 14px;
+  border: 1px solid #40a040 !important;
+}
+
+.run-button.running {
+  background: linear-gradient(180deg, #ff6b6b 0%, #ff4040 100%) !important;
+  color: #330000;
+  border: 1px solid #cc0000 !important;
+}
+
+.stop-button {
+  background: linear-gradient(180deg, #ffdd88 0%, #ffcc55 100%) !important;
+  color: #553300;
+  border: 1px solid #cc9933 !important;
+}
+
+.separator {
+  width: 1px;
+  height: 24px;
+  background: #ccc;
+}
+
+.labview-toolbar-label {
+  margin-left: auto;
+  font-size: 10px;
+  color: #000;
+  padding: 2px 6px;
+  background: #d4d0c8;
+  border: 1px solid #808080;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Content Area - VI Panel */
+.labview-content {
+  flex: 1;
+  background: #c0c0c0;
+  overflow-y: auto;
+  padding: 0;
+}
+
+/* Dashboard Header - LabVIEW Control Panel */
+.dashboard-header {
+  background: #d4d0c8;
+  color: #000;
+  padding: 15px 20px;
+  margin: 0;
+  border: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  box-shadow: inset 1px 1px 0 rgba(255,255,255,0.8), inset -1px -1px 0 rgba(0,0,0,0.2);
+}
+
+.dashboard-header h1 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000080;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
+}
+
+.header-controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 11px;
+}
+
+.connection-status {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.status-connected { color: #00ff00; font-weight: bold; }
+.status-simulation { color: #ffaa00; font-weight: bold; }
+.status-error { color: #ff5555; font-weight: bold; }
+.status-connecting { color: #ffdd00; font-weight: bold; }
+
+.auto-control-status label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Control Status Panel - LabVIEW Group Box */
+.control-status-panel {
+  background: #c0c0c0;
+  padding: 12px;
+  margin: 15px;
+  border: 2px solid #808080;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  box-shadow: inset -1px -1px 0 rgba(255,255,255,0.5), inset 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+.control-status-panel h3 {
+  margin: 0 0 10px 0;
+  color: #000080;
+  font-size: 13px;
+  font-weight: 600;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #808080;
+}
+
+.control-indicators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.control-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: #d4d0c8;
+  border: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  font-size: 11px;
+  font-weight: 500;
+  box-shadow: inset 1px 1px 0 rgba(255,255,255,0.8);
+}
+
+.indicator-light {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #999, #555);
+  border: 1px solid #333;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5), 0 1px 2px rgba(255,255,255,0.3);
+}
+
+.control-indicator.active {
+  background: #d4d0c8;
+  border: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+}
+
+.control-indicator.active .indicator-light {
+  background: radial-gradient(circle at 30% 30%, #00ff00, #00aa00);
+  border: 1px solid #006600;
+  box-shadow: 0 0 8px #00ff00, 0 0 12px rgba(0,255,0,0.5), inset 0 1px 3px rgba(255,255,255,0.3);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 0 15px 15px 15px;
+}
+
+.metric-card {
+  background: #ffffff;
+  padding: 12px 15px;
+  border: 2px solid #808080;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  box-shadow: inset -1px -1px 0 rgba(255,255,255,0.5), inset 1px 1px 0 rgba(0,0,0,0.2);
+  transition: none;
+}
+
+.metric-card:hover {
+  transform: none;
+  box-shadow: inset -1px -1px 0 rgba(255,255,255,0.5), inset 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+.metric-card.live-update {
+  background: #e8f4f8;
+}
+
+.metric-card.alert-low {
+  background: #fff3cd;
+  border-color: #ff9800;
+  animation: alertBlink 2s infinite;
+}
+
+.metric-card.alert-high {
+  background: #ffebee;
+  border-color: #f44336;
+  animation: alertBlink 2s infinite;
+}
+
+@keyframes alertBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.metric-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 11px;
+  color: #000;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.metric-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000080;
+  margin: 8px 0;
+  font-family: 'Courier New', monospace;
+}
+
+.metric-status {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.metric-range {
+  font-size: 11px;
+  color: #999;
+  margin-top: 5px;
+}
+
+/* Alerts Panel - Always Visible */
+.alerts-panel {
+  background: #c0c0c0;
+  margin: 0 15px 15px 15px;
+  padding: 12px;
+  border: 2px solid #808080;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  box-shadow: inset -1px -1px 0 rgba(255,255,255,0.5), inset 1px 1px 0 rgba(0,0,0,0.2);
+  min-height: 150px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.no-alerts {
+  text-align: center;
+  padding: 20px;
+  color: #008000;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.alerts-panel h3 {
+  margin: 0 0 10px 0;
+  color: #cc0000;
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 1px solid #808080;
+  padding-bottom: 6px;
+}
+
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alert-item {
+  display: grid;
+  grid-template-columns: 130px 140px 1fr;
+  gap: 8px;
+  padding: 8px;
+  border-left: 3px solid;
+  background: #f0f0f0;
+  font-size: 11px;
+  margin-bottom: 4px;
+  border: 1px solid #808080;
+}
+
+.alert-item.severity-info {
+  border-color: #2196f3;
+  background: #e3f2fd;
+}
+
+.alert-item.severity-warning {
+  border-color: #ff9800;
+  background: #fff3e0;
+}
+
+.alert-item.severity-error {
+  border-color: #f44336;
+  background: #ffebee;
+}
+
+.alert-time {
+  color: #666;
+  font-size: 11px;
+}
+
+.alert-type {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.alert-message {
+  color: #555;
+}
+
+/* Charts */
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 15px;
+  margin: 0 15px 15px 15px;
+}
+
+.chart-section {
+  background: #ffffff;
+  padding: 15px;
+  border: 2px solid #808080;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  box-shadow: inset -1px -1px 0 rgba(255,255,255,0.5), inset 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+.chart-section h2 {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  color: #000080;
+  font-weight: 600;
+  border-bottom: 1px solid #808080;
+  padding-bottom: 6px;
+}
+
+/* Configuration Panel - LabVIEW Group Box */
+.config-panel {
+  background: #c0c0c0;
+  margin: 0 15px 15px 15px;
+  padding: 12px;
+  border: 2px solid #808080;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  box-shadow: inset -1px -1px 0 rgba(255,255,255,0.5), inset 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+.config-panel h3 {
+  margin: 0 0 12px 0;
+  color: #000080;
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 1px solid #808080;
+  padding-bottom: 6px;
+}
+
+.config-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.config-group {
+  background: #d4d0c8;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  box-shadow: inset 1px 1px 0 rgba(255,255,255,0.8);
+}
+
+.config-group h4 {
+  margin: 0 0 10px 0;
+  color: #000080;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.config-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 11px;
+  color: #000;
+  font-weight: 500;
+}
+
+.config-group input[type="number"],
+.config-group input[type="text"] {
+  width: 100%;
+  padding: 4px 6px;
+  margin-top: 3px;
+  border: 2px solid #808080;
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  background: #ffffff;
+  font-size: 11px;
+  font-family: 'Courier New', monospace;
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.config-group input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+/* Ladder Diagram Panel */
+.ladder-diagram-panel {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #2c3e50;
+  border-radius: 8px;
+}
+
+.ladder-diagram-panel h2 {
+  margin: 0 0 20px 0;
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+
+/* I/O Table */
+.io-table-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.io-table {
+  border-collapse: collapse;
+  background: white;
+  border: 2px solid #000;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.io-table th {
+  background: #f0f0f0;
+  border: 1px solid #000;
+  padding: 8px 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.io-table td {
+  border: 1px solid #000;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+.io-table .io-label {
+  background: #e8f4f8;
+  font-weight: 600;
+  color: #0066cc;
+}
+
+.io-table .io-active {
+  background: #d4f4dd;
+  font-weight: bold;
+}
+
+/* Professional Ladder Diagram */
+.ladder-diagram {
+  font-family: 'Courier New', monospace;
+  background: #ffffff;
+  padding: 20px;
+  border: 2px solid #ccc;
+  margin-top: 20px;
+}
+
+.ladder-rung-pro {
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-left: 4px solid #3498db;
+  position: relative;
+}
+
+.rung-number {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3498db;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.rung-content {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-height: 60px;
+}
+
+.power-rail {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+  line-height: 1;
+  padding: 0 5px;
+}
+
+.power-rail.left {
+  margin-right: 10px;
+}
+
+.power-rail.right {
+  margin-left: 10px;
+}
+
+.ladder-elements {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+}
+
+.ladder-wire {
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+
+/* Contact Symbols */
+.contact-no, .contact-nc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 10px;
+  min-width: 80px;
+  border: 2px solid #666;
+  background: #fff;
+  transition: all 0.3s;
+}
+
+/* LabVIEW Style Ladder Diagram */
+.labview-cycle-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 20px;
+  background: #d0d0d0;
+  border: 2px solid #808080;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.cycle-label {
+  font-weight: 600;
+  color: #000;
+  font-size: 13px;
+}
+
+.cycle-value {
+  font-weight: bold;
+  color: #0066cc;
+  font-size: 14px;
+  padding: 4px 12px;
+  background: white;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
+.cycle-status {
+  width: 16px;
+  height: 16px;
+  font-size: 24px;
+  line-height: 0;
+  text-shadow: 0 0 6px currentColor;
+}
+
+/* LabVIEW Rungs */
+.labview-rung {
+  position: relative;
+  padding: 20px 15px;
+  background: white;
+  border: 1px solid #999;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+}
+
+.lv-rail-left, .lv-rail-right {
+  width: 4px;
+  height: 100%;
+  background: #000;
+  position: absolute;
+  top: 0;
+}
+
+.lv-rail-left {
+  left: 15px;
+}
+
+.lv-rail-right {
+  right: 15px;
+}
+
+.lv-logic-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 35px;
+  margin-right: 35px;
+  width: 100%;
+}
+
+/* LabVIEW Contact Block */
+.lv-block.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 8px 12px;
+  background: white;
+  border: 2px solid #666;
+  min-width: 100px;
+  transition: all 0.3s;
+}
+
+.lv-block.contact:before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  width: 15px;
+  height: 2px;
+  background: #000;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lv-block.contact.lv-active {
+  background: #00ff00;
+  border-color: #00aa00;
+  box-shadow: 0 0 10px rgba(0,255,0,0.6);
+}
+
+.lv-block.contact.lv-active:before {
+  background: #00ff00;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+.lv-contact-line {
+  width: 2px;
+  height: 20px;
+  background: #000;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.lv-contact-line:first-child {
+  top: 0;
+}
+
+.lv-contact-line:last-child {
+  bottom: 0;
+}
+
+.lv-contact-gap {
+  width: 30px;
+  height: 12px;
+}
+
+.lv-block-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #000;
+  margin-top: 25px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* LabVIEW Output Block (MOV) */
+.lv-block.output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 15px;
+  background: white;
+  border: 2px solid #666;
+  min-width: 140px;
+  margin-left: auto;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.lv-block.output:before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  width: 15px;
+  height: 2px;
+  background: #000;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lv-block.output.lv-active {
+  background: #ffeb99;
+  border-color: #ff9900;
+  box-shadow: 0 0 10px rgba(255,153,0,0.6);
+}
+
+.lv-block.output.lv-active:before {
+  background: #ff9900;
+  box-shadow: 0 0 5px #ff9900;
+}
+
+.lv-output-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.lv-output-text {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+
+.lv-output-value {
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+.lv-output-dest {
+  font-size: 10px;
+  font-weight: 600;
+  color: #666;
+  text-align: center;
+}
+
+/* LabVIEW Wire */
+.lv-wire {
+  flex: 1;
+  height: 2px;
+  background: #000;
+  min-width: 20px;
+}
+
+.lv-wire.example {
+  width: 60px;
+  height: 2px;
+  background: #000;
+}
+
+/* LabVIEW Status Panel */
+.labview-status-panel {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  background: #e0e0e0;
+  border: 2px solid #808080;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 12px;
+}
+
+.status-value {
+  padding: 4px 12px;
+  background: white;
+  border: 1px solid #999;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #0066cc;
+  font-size: 12px;
+}
+
+/* LabVIEW Legend */
+.labview-legend {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f5f5f5;
+  border: 2px solid #999;
+  border-radius: 4px;
+}
+
+.labview-legend h4 {
+  margin: 0 0 15px 0;
+  color: #0066cc;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 2px solid #0066cc;
+  padding-bottom: 8px;
+}
+
+.legend-grid-lv {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.legend-item-lv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.legend-item-lv span {
+  font-size: 11px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.legend-item-lv .lv-block.example {
+  transform: scale(0.8);
+}
+
+/* Contact Example */
+.contact-no.energized, .contact-nc.energized {
+  background: #00ff00;
+  border-color: #00aa00;
+  box-shadow: 0 0 10px rgba(0,255,0,0.5);
+}
+
+.contact-symbol {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.contact-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Coil Output */
+.coil-output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 10px;
+  min-width: 100px;
+  border: 2px solid #666;
+  background: #fff;
+  transition: all 0.3s;
+}
+
+.coil-output.energized {
+  background: #ff6b6b;
+  border-color: #cc0000;
+  box-shadow: 0 0 10px rgba(255,0,0,0.5);
+  animation: coilPulse 0.5s infinite;
+}
+
+@keyframes coilPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.coil-symbol {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.coil-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.rung-comment {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #666;
+  font-style: italic;
+  padding-left: 45px;
+}
+
+/* Legend Section */
+.ladder-legend-pro {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.ladder-legend-pro h4 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 8px;
+}
+
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.legend-item-pro {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+.symbol-example {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  font-weight: bold;
+  min-height: 40px;
+}
+
+.symbol-example.energized-ex {
+  background: #d4f4dd;
+  border-color: #00aa00;
+}
+
+.contact-symbol-ex, .coil-symbol-ex {
+  margin: 0 5px;
+  padding: 2px 8px;
+  border: 2px solid #666;
+  background: white;
+}
+
+.wire-ex {
+  letter-spacing: -2px;
+  color: #000;
+}
+
+.symbol-desc {
+  font-size: 12px;
+  color: #495057;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* I/O Status */
+.io-status {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border: 2px solid #3498db;
+  border-radius: 6px;
+  color: #2c3e50;
+}
+
+.io-status h4 {
+  margin: 0 0 15px 0;
+  color: #3498db;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 8px;
+}
+
+.io-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.io-group h5 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.io-pin {
+  padding: 10px;
+  margin-bottom: 8px;
+  background: #f8f8f8;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+}
+
+.io-pin.active {
+  background: #e8f8e8;
+  border-color: #00aa00;
+  color: #006600;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(0,170,0,0.3);
+}
+
+/* Notification Panel */
+.notification-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 400px;
+  height: 100vh;
+  background: white;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #3498db;
+  color: white;
+  border-bottom: 2px solid #2980b9;
+}
+
+.notification-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.notification-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.notification-header button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.notification-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+.notification-item {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-left: 4px solid;
+  border-radius: 4px;
+  background: #f8f8f8;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.notification-item.severity-info {
+  border-color: #2196f3;
+  background: #e3f2fd;
+}
+
+.notification-item.severity-warning {
+  border-color: #ff9800;
+  background: #fff3e0;
+}
+
+.notification-item.severity-error {
+  border-color: #f44336;
+  background: #ffebee;
+}
+
+.notif-time {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.notif-type {
+  font-weight: bold;
+  font-size: 13px;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.notif-message {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.notif-sent {
+  font-size: 11px;
+  color: #00aa00;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .metrics-grid,
+  .charts-container,
+  .config-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .notification-panel {
+    width: 100%;
+  }
+  
+  .alert-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================
+   AUTHENTIC LABVIEW BLOCK DIAGRAM
+   =================================== */
+
+.block-diagram-canvas {
+  background: #f0f0f0;
+  min-height: 700px;
+  position: relative;
+  padding: 20px;
+  border: 1px solid #999;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+  overflow: auto;
+}
+
+/* While Loop Structure */
+.lv-while-loop {
+  position: relative;
+  border: 2px dashed #666;
+  background: rgba(255,255,255,0.3);
+  padding: 50px 20px 20px 20px;
+  margin: 20px;
+  min-height: 650px;
+  border-radius: 4px;
+}
+
+.lv-while-header {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lv-loop-icon {
+  width: 30px;
+  height: 30px;
+  background: #e0e0e0;
+  border: 2px solid #666;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+.lv-loop-i {
+  font-style: italic;
+}
+
+.lv-loop-label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
+.lv-while-body {
+  position: relative;
+  min-height: 600px;
+}
+
+.lv-while-footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.lv-loop-condition {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+.lv-condition-icon {
+  font-size: 14px;
+}
+
+/* Terminal Blocks */
+.lv-terminal {
+  position: absolute;
+  z-index: 10;
+}
+
+.lv-term-box {
+  background: #fff;
+  border: 2px solid #003d7a;
+  border-radius: 4px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.lv-term-icon {
+  font-size: 16px;
+}
+
+.lv-term-label {
+  font-size: 11px;
+  font-weight: bold;
+  color: #003d7a;
+}
+
+/* SubVI Blocks */
+.lv-subvi {
+  position: absolute;
+  background: #fff;
+  border: 2px solid #666;
+  border-radius: 4px;
+  min-width: 120px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 5;
+}
+
+.lv-subvi-header {
+  background: linear-gradient(180deg, #fafafa 0%, #e0e0e0 100%);
+  padding: 6px 10px;
+  border-bottom: 1px solid #999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #333;
+}
+
+.lv-subvi-icon {
+  font-size: 14px;
+}
+
+.lv-subvi-body {
+  position: relative;
+  padding: 15px 5px;
+  min-height: 40px;
+}
+
+/* Connector Dots */
+.lv-connector {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  z-index: 10;
+}
+
+.lv-connector.left {
+  left: -5px;
+}
+
+.lv-connector.right {
+  right: -5px;
+}
+
+/* Unbundle Node */
+.lv-unbundle {
+  position: absolute;
+  z-index: 5;
+}
+
+.lv-unbundle-box {
+  background: #fff;
+  border: 2px solid #666;
+  border-radius: 2px;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.lv-unbundle-item {
+  white-space: nowrap;
+}
+
+/* Case Structure */
+.lv-case-structure {
+  position: absolute;
+  background: #fff;
+  border: 3px solid #0066cc;
+  border-radius: 4px;
+  min-width: 160px;
+  min-height: 80px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  z-index: 5;
+}
+
+.lv-case-header {
+  background: linear-gradient(180deg, #0066cc 0%, #0052a3 100%);
+  padding: 4px 8px;
+  text-align: center;
+  border-bottom: 2px solid #004d99;
+}
+
+.lv-case-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.lv-case-arrow {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 4px;
+}
+
+.lv-case-arrow:hover {
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+}
+
+.lv-case-label {
+  flex: 1;
+  text-align: center;
+}
+
+.lv-case-body {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+}
+
+/* Function Node */
+.lv-function-node {
+  background: #fff3cd;
+  border: 2px solid #856404;
+  border-radius: 3px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #856404;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.lv-function-node.alert {
+  background: #f8d7da;
+  border-color: #842029;
+  color: #842029;
+}
+
+.lv-func-icon {
+  font-size: 14px;
+}
+
+/* Wire Lines */
+.lv-wire-line {
+  position: absolute;
+  background: #333;
+  z-index: 3;
+}
+
+.lv-wire-line.h {
+  height: 2px;
+}
+
+.lv-wire-line.v {
+  width: 2px;
+}
+
+/* Cluster (Output Relays) */
+.lv-cluster {
+  position: absolute;
+  z-index: 5;
+}
+
+.lv-cluster-border {
+  background: #fff;
+  border: 2px solid #666;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  min-width: 140px;
+}
+
+.lv-cluster-label {
+  font-size: 11px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.lv-cluster-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Indicator with LED */
+.lv-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #333;
+}
+
+.lv-led {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ddd;
+  border: 1px solid #999;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+  transition: all 0.2s;
+}
+
+.lv-indicator.active .lv-led {
+  background: radial-gradient(circle at 30% 30%, #00ff00, #00aa00);
+  box-shadow: 0 0 8px #00ff00, inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Timer Block */
+.lv-timer {
+  position: absolute;
+  z-index: 5;
+}
+
+.lv-timer-box {
+  background: #fff;
+  border: 2px solid #666;
+  border-radius: 4px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.lv-timer-icon {
+  font-size: 16px;
+}
+
+.lv-timer-value {
+  font-size: 11px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Status Cluster (Top Right) */
+.lv-status-cluster {
+  background: #fff;
+  border: 2px solid #666;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.lv-status-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.lv-status-item:last-child {
+  margin-bottom: 0;
+}
+
+.lv-status-led {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #999;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.lv-status-text {
+  font-weight: bold;
+  color: #333;
+}
+
+.lv-status-label {
+  color: #666;
+  font-weight: normal;
+}
+
+.lv-status-value {
+  font-weight: bold;
+  color: #003d7a;
+}
+
+/* Responsive adjustments for block diagram */
+@media (max-width: 1024px) {
+  .block-diagram-canvas {
+    overflow-x: auto;
+  }
+  
+  .lv-while-loop {
+    min-width: 900px;
+  }
+}
