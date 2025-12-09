@@ -206,7 +206,7 @@ function HydroponicsAdvanced() {
     // Automatic RelayCmd control based on water level
     if (waterLevel < 20 && manualRelayCmd !== 1) {
       writeRelayCommand(1);
-    } else if (waterLevel > 90 && manualRelayCmd !== 0) {
+    } else if (waterLevel > 75 && manualRelayCmd !== 0) {
       writeRelayCommand(0);
     }
     
@@ -846,3 +846,4 @@ function HydroponicsAdvanced() {
 }
 
 export default HydroponicsAdvanced;
+
